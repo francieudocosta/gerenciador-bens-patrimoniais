@@ -1,21 +1,26 @@
-package com.github.francieudocosta.gerenciadorbenspatrimoniais.entities;
+package com.github.francieudocosta.gerenciadorbenspatrimoniais.infrastructure.entities;
 
-import com.github.francieudocosta.gerenciadorbenspatrimoniais.entities.enums.UserRole;
+import com.github.francieudocosta.gerenciadorbenspatrimoniais.infrastructure.entities.enums.UserRole;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.io.Serial;
 import java.io.Serializable;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Table(name = "usuario")
 @Entity
-@Data
 public class Usuario implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String username;

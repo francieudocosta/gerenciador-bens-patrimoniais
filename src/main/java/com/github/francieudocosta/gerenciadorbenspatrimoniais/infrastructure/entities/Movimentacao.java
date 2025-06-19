@@ -1,23 +1,29 @@
-package com.github.francieudocosta.gerenciadorbenspatrimoniais.entities;
+package com.github.francieudocosta.gerenciadorbenspatrimoniais.infrastructure.entities;
 
-import com.github.francieudocosta.gerenciadorbenspatrimoniais.entities.enums.TipoMovimentacao;
+import com.github.francieudocosta.gerenciadorbenspatrimoniais.infrastructure.entities.enums.TipoMovimentacao;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
+
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Table(name = "movimentacao")
 @Entity
-@Data
 public class Movimentacao implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @ManyToMany

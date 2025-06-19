@@ -1,26 +1,29 @@
-package com.github.francieudocosta.gerenciadorbenspatrimoniais.entities;
+package com.github.francieudocosta.gerenciadorbenspatrimoniais.infrastructure.entities;
 
 import jakarta.persistence.*;
-import lombok.Data;
-
+import lombok.*;
 import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
 /*
     cada item vira um bem patrimonial
 */
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Table(name = "item_nota_fiscal")
 @Entity
-@Data
 public class ItemNotaFiscal implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @ManyToOne
