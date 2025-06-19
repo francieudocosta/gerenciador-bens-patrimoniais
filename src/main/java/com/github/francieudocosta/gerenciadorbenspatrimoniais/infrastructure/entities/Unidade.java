@@ -1,15 +1,20 @@
-package com.github.francieudocosta.gerenciadorbenspatrimoniais.entities;
+package com.github.francieudocosta.gerenciadorbenspatrimoniais.infrastructure.entities;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 import java.util.List;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Table(name = "unidade")
 @Entity
-@Data
 public class Unidade {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String nome;

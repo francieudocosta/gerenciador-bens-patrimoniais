@@ -1,22 +1,27 @@
-package com.github.francieudocosta.gerenciadorbenspatrimoniais.entities;
+package com.github.francieudocosta.gerenciadorbenspatrimoniais.infrastructure.entities;
 
-import com.github.francieudocosta.gerenciadorbenspatrimoniais.entities.enums.EstadoConservacao;
+import com.github.francieudocosta.gerenciadorbenspatrimoniais.infrastructure.entities.enums.EstadoConservacao;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Table(name = "bem_patrimonial")
 @Entity
-@Data
 public class BemPatrimonial implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String descricao;
