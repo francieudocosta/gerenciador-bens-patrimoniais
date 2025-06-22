@@ -30,6 +30,10 @@ public class NotaFiscal implements Serializable {
     @JoinColumn(name = "fornecedor_id")
     private Fornecedor fornecedor;
 
+    @ManyToOne
+    @JoinColumn(name = "dotacao_id", nullable = false)
+    private Dotacao dotacao;
+
     @OneToMany(mappedBy = "notaFiscal", cascade = CascadeType.ALL)
     private List<ItemNotaFiscal> itens;
 }
