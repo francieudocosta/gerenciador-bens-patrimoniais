@@ -5,7 +5,9 @@ import jakarta.persistence.*;
 import lombok.*;
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -41,7 +43,7 @@ public class BemPatrimonial implements Serializable {
     private Servidor responsavel;
 
     @ManyToMany(mappedBy = "bens")
-    private Set<Movimentacao> movimentacoes = new HashSet<>();
+    private List<Movimentacao> movimentacoes = new ArrayList<>();
 
     @PrePersist
     private void setResponsavel(){
